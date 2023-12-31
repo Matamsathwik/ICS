@@ -1,0 +1,67 @@
+open kali linux 
+open the terminal
+enter the command
+cd /var/www/html
+open the firefox browser and type dvwa github
+click the link and copy the url and paste in terminal
+sudo git clone https://github.com/digininja/DVWA
+give command----> ls
+check  the folder dvwa
+mv dvwa DVWA
+ls
+cd DVWA
+cd config
+check the folder config.inc.php.dist
+sudo cp config.inc.php.dist config.inc.php
+ls
+cat config.inc.php
+sudo nano config.inc.php
+change db user===user
+p@ssword ==pass------->chage
+cat config.inc.php
+check it is change or not 
+sudo service mysql start
+sudo mysql -u root -p
+create user dvwa;
+create user dvwa@localhost identified by 'p@ssw0rd';
+grant all on dvwa.* to dvwa@localhost;
+flush privileges;
+exit------------- get bye... message
+sudo service apache2 start
+http://localhost/DVWA               or    http://127.0.0.1/DVWA/login.php
+user name::admin   
+password::password  
+ ----if any one getting the  problem or accessing the page 
+please follow the steps
+cd --enter
+cd /etc
+cd php
+cd 8.1
+cd apache2.....................or...........direct command
+--------------> cd /etc/php/8.1/apache2
+check file 
+ls
+there is php.ini file
+next command ......
+sudo nano php.ini
+next---> ctrl + / then enter
+it will show the line number and give 865
+change 
+allow_url_fopen = On
+allow_url_include = On   
+next---> ctrl + x
+type y and enter
+
+and again restart the server 
+sudo service apache2 restart
+
+now login dvwa website
+create data base
+check the user details
+give command ----> 1
+and 2
+and ----> %'or'1'='1
+
+change
+
+
